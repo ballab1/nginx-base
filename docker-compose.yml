@@ -7,11 +7,11 @@ services:
                 CBF_VERSION: "${CBF_VERSION:-}"
                 CONTAINER_NAME: nginx_base
                 CONTAINER_VERSION: ${CONTAINER_VERSION:-3.0.0}
-                FROM_BASE: supervisord:${CONTAINER_TAG:-latest}
+                FROM_BASE: ${DOCKER_REGISTRY:-}supervisord:${CONTAINER_TAG:-latest}
             cache_from:
-                - alpine:3.8
-                - base_container:${CONTAINER_TAG:-latest}
-                - supervisord:${CONTAINER_TAG:-latest}
+                - ${DOCKER_REGISTRY:-}alpine:3.8
+                - ${DOCKER_REGISTRY:-}base_container:${CONTAINER_TAG:-latest}
+                - ${DOCKER_REGISTRY:-}supervisord:${CONTAINER_TAG:-latest}
             context: .
             dockerfile: Dockerfile
         container_name: nginx_base
@@ -20,7 +20,7 @@ services:
             SUPERVISORD_PASS: $CFG_PASS
             SUPERVISORD_USER: $CFG_USER 
         hostname: nginx_base
-        image: nginx_base:${CONTAINER_TAG:-latest}
+        image: ${DOCKER_REGISTRY:-}nginx_base:${CONTAINER_TAG:-latest}
         logging:
             driver: json-file
             options:
