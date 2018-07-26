@@ -3,6 +3,7 @@
 crf.copyFileToRuntime 'LIB' 'nginx_base.bashlib'
 
 declare -ar env_nginx=(
+    "NGINX_VERSION=${NGINX_VERSION:?}"
     'NGINX_UID="${NGINX_UID:-$(nginx.UID)}"'
     'NGINX_GID="${NGINX_GID:-$(nginx.GID)}"'
     'USER="$WWW_UID"'

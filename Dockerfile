@@ -15,6 +15,12 @@ ENV DEBUG_TRACE=0
 
 ARG NGINX_DEBUG=${NGINX_DEBUG:-1}
 
+
+# nginx version being bundled in this docker image
+ARG NGINX_VERSION=${NGINX_VERSION:-1.15.1}
+LABEL nginx.version=$NGINX_VERSION
+
+
 # build content
 RUN set -o verbose \
     && chmod u+rwx /tmp/build.sh \
