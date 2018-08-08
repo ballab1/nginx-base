@@ -21,7 +21,6 @@ services:
                 container.git.url: $CONTAINER_GIT_URL
                 container.origin: $CONTAINER_ORIGIN
                 container.original.name: nginx_base
-                container.version: ${CONTAINER_VERSION:-3.0.0}
         container_name: nginx_base
         environment:
             DEBUG_TRACE: ${DEBUG_TRACE:-0}
