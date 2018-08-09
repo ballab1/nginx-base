@@ -27,7 +27,7 @@ services:
             SUPERVISORD_PASS: $CFG_PASS
             SUPERVISORD_USER: $CFG_USER
         hostname: nginx_base
-        image: ${DOCKER_REGISTRY:-}nginx_base:${CONTAINER_TAG:-latest}
+        image: ${DOCKER_REGISTRY:-}nginx_base/1.15.1:${CONTAINER_TAG:-latest}
         logging:
             driver: json-file
             options:
