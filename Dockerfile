@@ -4,7 +4,7 @@ FROM $FROM_BASE
 # name and version of this docker image
 ARG CONTAINER_NAME=nginx_base
 # Specify CBF version to use with our configuration and customizations
-ARG CBF_VERSION="${CBF_VERSION}"
+ARG CBF_VERSION
 
 # include our project files
 COPY build Dockerfile /tmp/
@@ -17,7 +17,7 @@ ARG NGINX_DEBUG=${NGINX_DEBUG:-1}
 
 
 # nginx version being bundled in this docker image
-ARG NGINX_VERSION=${NGINX_VERSION:-1.15.1}
+ARG NGINX_VERSION=1.15.1
 LABEL nginx.version=$NGINX_VERSION
 
 
