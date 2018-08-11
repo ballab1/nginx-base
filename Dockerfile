@@ -13,7 +13,7 @@ COPY build Dockerfile /tmp/
 #    (0:default, 1:trace & do not cleanup; 2:continue after errors)
 ENV DEBUG_TRACE=0
 
-ARG NGINX_DEBUG=${NGINX_DEBUG:-1}
+ARG NGINX_DEBUG=1
 
 
 # nginx version being bundled in this docker image
