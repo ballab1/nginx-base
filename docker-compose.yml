@@ -21,14 +21,13 @@ services:
                 container.git.url: $CONTAINER_GIT_URL
                 container.origin: $CONTAINER_ORIGIN
                 container.original.name: nginx_base
-                container.version: ${CONTAINER_VERSION:-3.0.0}
         container_name: nginx_base
         environment:
             DEBUG_TRACE: ${DEBUG_TRACE:-0}
             SUPERVISORD_PASS: $CFG_PASS
             SUPERVISORD_USER: $CFG_USER
         hostname: nginx_base
-        image: ${DOCKER_REGISTRY:-}nginx_base:${CONTAINER_TAG:-latest}
+        image: ${DOCKER_REGISTRY:-}nginx_base/1.15.1:${CONTAINER_TAG:-latest}
         logging:
             driver: json-file
             options:
