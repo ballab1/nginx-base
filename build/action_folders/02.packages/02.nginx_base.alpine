@@ -13,4 +13,5 @@ declare -a PKGS=( fcgiwrap
 #                  libxml2
 #                  libxslt
 #                  nginx
+                  thttpd
 )

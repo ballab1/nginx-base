@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "${PWD_PROTECTED:-}" ]; then
+    : ${USER:?"Environment variable 'USER' not defined in '${BASH_SOURCE[0]}'"} 
+    : ${USER_ID:?"Environment variable 'USER_ID' not defined in '${BASH_SOURCE[0]}'"} 
+    : ${USER_PASS:?"Environment variable 'USER_PASS' not defined in '${BASH_SOURCE[0]}'"} 
+    nginx.setHtPasswd "$(lib.getUserInfo "$USER_ID")" "$USER_PASS"
+fi

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-crf.copyFileToRuntime 'LIB' 'nginx_base.bashlib'
-
 declare -ar env_nginx=(
     "NGINX_VERSION=${NGINX_VERSION:?}"
     'NGINX_UID="${NGINX_UID:-$(nginx.UID)}"'
