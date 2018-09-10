@@ -74,7 +74,7 @@ function pretty_print()
             data="#include ${data:12}  #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         fi
         [ "${data:0:11}" = '<<<< stop: ' ] && data="# <<<<<<< ${data:11}  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
-        printf "%s%s\n" "$(tab_prefix "$tabs")" "${data}"
+        printf '%s%s\n' "$(tab_prefix "$tabs")" "${data}"
         [ "${data: -1}" = '{' ] && (( tabs++ ))
     done
 }
@@ -87,7 +87,7 @@ function tab_prefix()
     [ $recursiveInvocation -eq 0 ] || return
 
     for (( i=0; i<tabs; i++ )); do
-        printf '  '
+        echo -n '  '
     done
 }
 
