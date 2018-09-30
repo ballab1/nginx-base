@@ -2,13 +2,5 @@
 
 declare -a OPTS=( '--virtual' '.buildDependencies' )
 declare -a PKGS=( gcc
-		  gd-dev
-		  geoip-dev
-		  gnupg
-		  libc-dev
-		  libxslt-dev
 		  linux-headers
-		  make
-		  openssl-dev
-		  pcre-dev
-                  zlib-dev ) 
+		  make ) 

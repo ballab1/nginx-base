@@ -1,8 +1,8 @@
-ARG FROM_BASE=${DOCKER_REGISTRY:-}${OS:-}supervisord:${BASE_TAG:-latest}
+ARG FROM_BASE=${DOCKER_REGISTRY:-}${CONTAINER_OS:-}supervisord:${BASE_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
-ARG CONTAINER_NAME=nginx_base
+ARG CONTAINER_NAME=nginx-base
 # Specify CBF version to use with our configuration and customizations
 ARG CBF_VERSION
 
@@ -30,4 +30,4 @@ RUN [ $DEBUG_TRACE != 0 ] || rm -rf /tmp/*
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 #CMD ["$CONTAINER_NAME"]
-CMD ["nginx_base"]
+CMD ["nginx-base"]
