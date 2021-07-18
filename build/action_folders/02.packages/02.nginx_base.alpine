@@ -12,15 +12,24 @@
 #                  libxslt
 #                  nginx
 
+
+# nginx build Packages
+
+declare -a BUILD=( gcc
+		   gd-dev
+		   geoip-dev
+		   libc-dev
+		   libxslt-dev
+		   linux-headers
+		   make
+		   openssl-dev
+		   pcre-dev
+                   zlib-dev
+		  )
+
+
 declare -a PKGS=( fcgiwrap
-		  gd-dev
-		  geoip-dev
-		  libxslt-dev
 		  gnupg
-		  libc-dev
                   libintl
-		  openssl-dev
-		  pcre-dev
                   thttpd
-                  zlib-dev
                  )
