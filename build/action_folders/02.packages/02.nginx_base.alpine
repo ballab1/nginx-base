@@ -31,5 +31,6 @@ declare -a BUILD=( gcc
 declare -a PKGS=( fcgiwrap
 		  gnupg
                   libintl
+                  pcre
                   thttpd
                  )
