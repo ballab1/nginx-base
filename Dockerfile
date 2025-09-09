@@ -1,4 +1,4 @@
-ARG FROM_BASE=${DOCKER_REGISTRY:-/}${CONTAINER_OS:-alpine}/supervisord:${BASE_TAG:-latest}
+ARG FROM_BASE=${DOCKER_REGISTRY:-}${CONTAINER_OS:-alpine}/supervisord:${BASE_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
@@ -17,7 +17,7 @@ ARG NGINX_DEBUG=1
 
 
 # nginx version being bundled in this docker image
-ARG NGINX_VERSION=1.26.3
+ARG NGINX_VERSION=1.28.0
 LABEL version.nginx=$NGINX_VERSION
 
 
